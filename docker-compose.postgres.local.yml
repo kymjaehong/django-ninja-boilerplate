@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  db:
+    container_name: boilerplate-db
+    image: postgres:15
+    restart: always
+    volumes:
+      - boilerplate_db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: boilerplate
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5433:5432"
+
+volumes:
+  boilerplate_db:
